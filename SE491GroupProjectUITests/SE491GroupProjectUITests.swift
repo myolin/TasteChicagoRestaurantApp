@@ -28,6 +28,7 @@ final class SE491GroupProjectUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true)
     }
 
     func testLaunchPerformance() throws {
