@@ -18,6 +18,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Sign In
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
@@ -28,6 +29,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Sign Up
     func createUser(withEmail email: String, password: String, fullname: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -41,6 +43,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Sign Out
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -51,6 +54,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Forget Password
     func forgetPassword(withEmail email: String) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
@@ -59,6 +63,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Delete Account
     func deleteAccount() {
         guard let user = Auth.auth().currentUser else { return }
         user.delete() { error in
@@ -71,6 +76,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    // Get Current User
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }

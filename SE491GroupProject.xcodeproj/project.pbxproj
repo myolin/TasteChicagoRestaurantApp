@@ -34,6 +34,18 @@
 		CB573D3A2BD0D728003613CD /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB573D392BD0D728003613CD /* CustomTabBar.swift */; };
 		CB573D3C2BD0D7D1003613CD /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB573D3B2BD0D7D1003613CD /* CategoryView.swift */; };
 		CB573D3E2BD0D7DF003613CD /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB573D3D2BD0D7DE003613CD /* ReservationView.swift */; };
+		CB9473622BEC14F6004A9598 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473612BEC14F6004A9598 /* SplashScreenView.swift */; };
+		CB9473642BEC1565004A9598 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473632BEC1565004A9598 /* ListView.swift */; };
+		CB9473662BEC158A004A9598 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473652BEC158A004A9598 /* RestaurantDetailView.swift */; };
+		CB94736A2BEC15D6004A9598 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473692BEC15D6004A9598 /* MapView.swift */; };
+		CB94736C2BEC15F8004A9598 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94736B2BEC15F8004A9598 /* ListViewModel.swift */; };
+		CB94736E2BEC1603004A9598 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94736D2BEC1603004A9598 /* RestaurantDetailViewModel.swift */; };
+		CB9473702BEC169D004A9598 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94736F2BEC169D004A9598 /* HomeViewModel.swift */; };
+		CB9473722BEC16AC004A9598 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473712BEC16AC004A9598 /* FavoriteViewModel.swift */; };
+		CB9473742BEC16EA004A9598 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473732BEC16EA004A9598 /* MapLocation.swift */; };
+		CB9473762BEC1713004A9598 /* JsonBinAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473752BEC1713004A9598 /* JsonBinAPIService.swift */; };
+		CB9473782BEC1728004A9598 /* YelpAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473772BEC1728004A9598 /* YelpAPIService.swift */; };
+		CB94737A2BEC173F004A9598 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9473792BEC173F004A9598 /* FirestoreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +92,19 @@
 		CB573D392BD0D728003613CD /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		CB573D3B2BD0D7D1003613CD /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		CB573D3D2BD0D7DE003613CD /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		CB9473612BEC14F6004A9598 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		CB9473632BEC1565004A9598 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CB9473652BEC158A004A9598 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		CB9473692BEC15D6004A9598 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CB94736B2BEC15F8004A9598 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		CB94736D2BEC1603004A9598 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
+		CB94736F2BEC169D004A9598 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CB9473712BEC16AC004A9598 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		CB9473732BEC16EA004A9598 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
+		CB9473752BEC1713004A9598 /* JsonBinAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonBinAPIService.swift; sourceTree = "<group>"; };
+		CB9473772BEC1728004A9598 /* YelpAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIService.swift; sourceTree = "<group>"; };
+		CB9473792BEC173F004A9598 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		CB94737B2BEC2D23004A9598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +151,8 @@
 		CB07589B2BD70FC3008A96AB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CB94736F2BEC169D004A9598 /* HomeViewModel.swift */,
+				CB9473712BEC16AC004A9598 /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -153,6 +180,7 @@
 		CB573CE12BD054B0003613CD /* SE491GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				CB94737B2BEC2D23004A9598 /* Info.plist */,
 				CB573D0E2BD06677003613CD /* App */,
 				CB573D0F2BD06871003613CD /* Components */,
 				CB573D122BD06F75003613CD /* View */,
@@ -201,10 +229,8 @@
 		CB573D0F2BD06871003613CD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CB573D102BD068A3003613CD /* InputView.swift */,
-				CB573D1E2BD0778E003613CD /* ProfileRowView.swift */,
-				CB573D392BD0D728003613CD /* CustomTabBar.swift */,
-				CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */,
+				CB9473672BEC15A7004A9598 /* View */,
+				CB9473682BEC15B6004A9598 /* ViewModel */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -212,6 +238,7 @@
 		CB573D122BD06F75003613CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB9473602BEC14DE004A9598 /* Splash */,
 				CB573D322BD096B5003613CD /* root */,
 				CB573D132BD06F87003613CD /* Authentication */,
 				CB573D2F2BD090D7003613CD /* Tab */,
@@ -233,6 +260,7 @@
 			children = (
 				CB573D192BD074C8003613CD /* User.swift */,
 				CB0758742BD5C251008A96AB /* RestaurantModel.swift */,
+				CB9473732BEC16EA004A9598 /* MapLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,8 +303,42 @@
 		CB573D7F2BD31EB7003613CD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CB9473752BEC1713004A9598 /* JsonBinAPIService.swift */,
+				CB9473772BEC1728004A9598 /* YelpAPIService.swift */,
+				CB9473792BEC173F004A9598 /* FirestoreService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		CB9473602BEC14DE004A9598 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CB9473612BEC14F6004A9598 /* SplashScreenView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		CB9473672BEC15A7004A9598 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB573D102BD068A3003613CD /* InputView.swift */,
+				CB573D1E2BD0778E003613CD /* ProfileRowView.swift */,
+				CB573D392BD0D728003613CD /* CustomTabBar.swift */,
+				CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */,
+				CB9473632BEC1565004A9598 /* ListView.swift */,
+				CB9473652BEC158A004A9598 /* RestaurantDetailView.swift */,
+				CB9473692BEC15D6004A9598 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB9473682BEC15B6004A9598 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB94736B2BEC15F8004A9598 /* ListViewModel.swift */,
+				CB94736D2BEC1603004A9598 /* RestaurantDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,20 +481,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9473782BEC1728004A9598 /* YelpAPIService.swift in Sources */,
 				CB0758752BD5C251008A96AB /* RestaurantModel.swift in Sources */,
+				CB9473642BEC1565004A9598 /* ListView.swift in Sources */,
 				CB573D172BD0732B003613CD /* ForgetPasswordView.swift in Sources */,
 				CB573D342BD0D5B4003613CD /* ContentView.swift in Sources */,
+				CB94737A2BEC173F004A9598 /* FirestoreService.swift in Sources */,
 				CB573D152BD06FA5003613CD /* SignUpView.swift in Sources */,
 				CB573D3A2BD0D728003613CD /* CustomTabBar.swift in Sources */,
 				CB573D1A2BD074C8003613CD /* User.swift in Sources */,
+				CB94736A2BEC15D6004A9598 /* MapView.swift in Sources */,
+				CB9473722BEC16AC004A9598 /* FavoriteViewModel.swift in Sources */,
 				CB573D382BD0D61B003613CD /* FavoriteView.swift in Sources */,
+				CB9473762BEC1713004A9598 /* JsonBinAPIService.swift in Sources */,
 				CB573D1F2BD0778E003613CD /* ProfileRowView.swift in Sources */,
+				CB9473742BEC16EA004A9598 /* MapLocation.swift in Sources */,
+				CB94736C2BEC15F8004A9598 /* ListViewModel.swift in Sources */,
 				CB573D3E2BD0D7DF003613CD /* ReservationView.swift in Sources */,
 				CB573D362BD0D5F6003613CD /* HomeView.swift in Sources */,
+				CB94736E2BEC1603004A9598 /* RestaurantDetailViewModel.swift in Sources */,
 				CB573D3C2BD0D7D1003613CD /* CategoryView.swift in Sources */,
+				CB9473622BEC14F6004A9598 /* SplashScreenView.swift in Sources */,
 				CB573D0D2BD055A6003613CD /* LoginView.swift in Sources */,
 				CB573D112BD068A3003613CD /* InputView.swift in Sources */,
 				CB573D1D2BD07617003613CD /* ProfileView.swift in Sources */,
+				CB9473702BEC169D004A9598 /* HomeViewModel.swift in Sources */,
+				CB9473662BEC158A004A9598 /* RestaurantDetailView.swift in Sources */,
 				CB573CE32BD054B0003613CD /* SE491GroupProjectApp.swift in Sources */,
 				CB573D2E2BD07EDD003613CD /* AuthViewModel.swift in Sources */,
 				CB0758792BD5CF4C008A96AB /* RestaurantCellView.swift in Sources */,
@@ -601,6 +675,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SE491GroupProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SE491GroupProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -629,6 +704,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SE491GroupProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SE491GroupProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
