@@ -1,18 +1,19 @@
 import Foundation
 
-class RestaurantDetailViewModel {
+class RestaurantDetailViewModel: ObservableObject {
     
     let yelpService = YelpAPIService()
     let firestoreService = FirestoreService()
+    @Published var isOpenNow = false
     
     init() {}
     
-    func getIsOpenNow(_ id: String) -> Bool {
-        var isOpen: Bool = false
+    func getIsOpenNow(_ id: String) {
         yelpService.getIsOpenNow(restaurant_id: id) { status in
-            isOpen = status
+            DispatchQueue.main.async {
+                self.isOpenNow = status
+            }
         }
-        return isOpen
     }
     
     // Get all 7 days open hours of a restaurant

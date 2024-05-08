@@ -3,7 +3,7 @@ import WebKit
 
 struct RestaurantDetailView: View {
     var restaurant: Business
-    var viewModel = RestaurantDetailViewModel()
+    @StateObject var viewModel = RestaurantDetailViewModel()
     @State private var showMenuWebView = false
     @State private var showYelpWebView = false
     @State private var showHours = false
@@ -50,7 +50,7 @@ struct RestaurantDetailView: View {
                                     Text(Image(systemName: "circle.fill"))
                                         .font(.system(size: 10))
                                         .foregroundStyle(Color.gray)
-                                    if viewModel.getIsOpenNow(restaurant.id) {
+                                    if viewModel.isOpenNow {
                                         Text("Open")
                                             .font(.headline)
                                             .foregroundStyle(Color.green)
@@ -191,6 +191,9 @@ struct RestaurantDetailView: View {
             }
         }
         .ignoresSafeArea(edges: .top)
+        .onAppear {
+            viewModel.getIsOpenNow(restaurant.id)
+        }
     }
 }
 
