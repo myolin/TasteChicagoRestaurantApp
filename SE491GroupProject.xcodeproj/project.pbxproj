@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0400F52BEFF23900D10E90 /* GlobalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */; };
 		CB0758752BD5C251008A96AB /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0758742BD5C251008A96AB /* RestaurantModel.swift */; };
 		CB0758792BD5CF4C008A96AB /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */; };
 		CB573CE32BD054B0003613CD /* SE491GroupProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB573CE22BD054B0003613CD /* SE491GroupProjectApp.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
 		CB0758742BD5C251008A96AB /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
 		CB573CDF2BD054B0003613CD /* SE491GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SE491GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 			children = (
 				CB94736F2BEC169D004A9598 /* HomeViewModel.swift */,
 				CB9473712BEC16AC004A9598 /* FavoriteViewModel.swift */,
+				CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				CB573D3C2BD0D7D1003613CD /* CategoryView.swift in Sources */,
 				CB9473622BEC14F6004A9598 /* SplashScreenView.swift in Sources */,
 				CB573D0D2BD055A6003613CD /* LoginView.swift in Sources */,
+				CB0400F52BEFF23900D10E90 /* GlobalSearch.swift in Sources */,
 				CB573D112BD068A3003613CD /* InputView.swift in Sources */,
 				CB573D1D2BD07617003613CD /* ProfileView.swift in Sources */,
 				CB9473702BEC169D004A9598 /* HomeViewModel.swift in Sources */,

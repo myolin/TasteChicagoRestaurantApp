@@ -4,7 +4,7 @@ import Firebase
 @main
 struct SE491GroupProjectApp: App {
     @StateObject var viewModel = AuthViewModel()
-    
+    @StateObject var globalSearch = GlobalSearch()
     @State private var showSplash = true
         
     init() {
@@ -21,8 +21,9 @@ struct SE491GroupProjectApp: App {
                     ContentView().environmentObject(viewModel)
                 }
             }
+            .environmentObject(globalSearch)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation {
                         self.showSplash = false
                     }

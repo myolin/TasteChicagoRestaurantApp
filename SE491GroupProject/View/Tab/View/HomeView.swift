@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-        
+    @EnvironmentObject var globalSearch: GlobalSearch
     @StateObject var viewModel = HomeViewModel()
     @State private var searchTerm = ""
     
@@ -50,16 +50,20 @@ struct HomeView: View {
                 .listRowSeparator(.hidden)
             }
             .onChange(of: searchTerm) {
-                viewModel.filteredRestaurants = viewModel.restaurants.filter({ restaurant in
+                viewModel.filteredRestaurants = globalSearch.allRestaurants.filter({ restaurant in
                     restaurant.name.localizedCaseInsensitiveContains(searchTerm)
                 })
             }
             .padding(.top)
             .padding(.horizontal, -10)
+            .onAppear {
+                viewModel.getTopRecommendation(globalSearch)
+                viewModel.combineAll(globalSearch)
+            }
         }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView().environmentObject(GlobalSearch())
 }

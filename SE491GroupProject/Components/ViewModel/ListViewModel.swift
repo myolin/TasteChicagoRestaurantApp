@@ -3,7 +3,6 @@ import Foundation
 class ListViewModel: ObservableObject {
     @Published var businesses: [Business] = []
     let service = JsonBinAPIService()
-    let yelpService = YelpAPIService()
     
     init(_ category: String) {
         getData(category: category)
