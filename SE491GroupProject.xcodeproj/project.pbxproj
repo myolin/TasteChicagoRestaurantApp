@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB0400F52BEFF23900D10E90 /* GlobalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */; };
+		CB0400F82BF15BC000D10E90 /* MockData.json in Sources */ = {isa = PBXBuildFile; fileRef = CB0400F72BF15BC000D10E90 /* MockData.json */; };
 		CB0758752BD5C251008A96AB /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0758742BD5C251008A96AB /* RestaurantModel.swift */; };
 		CB0758792BD5CF4C008A96AB /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */; };
 		CB573CE32BD054B0003613CD /* SE491GroupProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB573CE22BD054B0003613CD /* SE491GroupProjectApp.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
+		CB0400F72BF15BC000D10E90 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		CB0758742BD5C251008A96AB /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		CB0758782BD5CF4C008A96AB /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
 		CB573CDF2BD054B0003613CD /* SE491GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SE491GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CB573CF32BD054B1003613CD /* SE491GroupProjectTests.swift */,
+				CB0400F72BF15BC000D10E90 /* MockData.json */,
 			);
 			path = SE491GroupProjectTests;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB573CF42BD054B1003613CD /* SE491GroupProjectTests.swift in Sources */,
+				CB0400F82BF15BC000D10E90 /* MockData.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
