@@ -1,0 +1,44 @@
+name: iOS CI
+
+on:
+    push:
+      branches:
+        - main
+    pull_request:
+      types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1.6.0
+      with:
+        xcode-version: 'latest'
+    - name: Cache Pods
+      uses: actions/cache@v3
+      with:
+        path: ~/Library/Caches/CocoaPods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+    - name: Build iOS Project
+      run: xcodebuild build -project SE491GroupProject.xcodeproj -scheme SE491GroupProject -sdk iphonesimulator -configuration Debug
+
+  tests:
+    needs: build
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1.6.0
+      with:
+        xcode-version: 'latest'
+    - name: Build iOS Project
+      run: xcodebuild build -project SE491GroupProject.xcodeproj -scheme SE491GroupProject -sdk iphonesimulator -configuration Debug    
+    - name: Run Unit Tests
+      run: |
+        xcrun simctl boot "iPhone 15 Pro" || true # Boot simulator
+        sleep 30 # Wait for simulator to be ready
+        xcodebuild test -project SE491GroupProject.xcodeproj -scheme SE491GroupProject -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest' -enableCodeCoverage YES -resultBundlePath TestResults
