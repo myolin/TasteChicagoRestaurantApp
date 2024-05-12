@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var globalSearch: GlobalSearch
     
     @State private var selectedTab: Tab = .home
     
@@ -31,6 +32,9 @@ struct ContentView: View {
                     , alignment: .bottom
                 )
                 .ignoresSafeArea(.all, edges: .bottom)
+                .onAppear {
+                    globalSearch.combine()
+                }
         
             } else {
                 LoginView()

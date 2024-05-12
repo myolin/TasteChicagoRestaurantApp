@@ -17,9 +17,7 @@ class GlobalSearch: ObservableObject {
     let service = JsonBinAPIService()
     
     init() {
-        DispatchQueue.main.async { @MainActor in
-            self.initializeRecommended()
-        }
+        initializeRecommended()
         DispatchQueue.global(qos: .background).async {
             self.initializeAmerican()
             self.initializeChinese()

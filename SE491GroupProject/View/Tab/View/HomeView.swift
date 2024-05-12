@@ -58,7 +58,6 @@ struct HomeView: View {
             .padding(.horizontal, -10)
             .onAppear {
                 viewModel.getTopRecommendation(globalSearch)
-                viewModel.combineAll(globalSearch)
             }
         }
     }
