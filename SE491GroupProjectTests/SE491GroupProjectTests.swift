@@ -1,37 +1,42 @@
-//
-//  SE491GroupProjectTests.swift
-//  SE491GroupProjectTests
-//
-//  Created by Myo Zaw Lin on 4/17/24.
-//
-
 import XCTest
 @testable import SE491GroupProject
 
 final class SE491GroupProjectTests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        XCTAssert(true)
+    // test User Model
+    func testUserModel_canCreateInstance() {
+        let instance = User(id: "Unique ID", fullname: "John Smith", email: "johnsmith@test.com")
+        XCTAssertNotNil(instance)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    // test api call, response and restaurant data model
+    func testJsonBinAPICalls() throws {
+        let bundle = Bundle(for: type(of: self))
+        
+        guard let url = bundle.url(forResource: "MockData", withExtension: "json") else {
+            XCTFail("Missing file: MockData.json")
+            return
         }
+        
+        let json = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        
+        let restaurant = try decoder.decode(Business.self, from: json)
+        
+        XCTAssertNotNil(restaurant)
+        XCTAssertEqual(restaurant.name, "The Dearborn")
+        XCTAssertEqual(restaurant.phone, "(312) 384-1242")
+        XCTAssertEqual(restaurant.price, "$$")
+        XCTAssertEqual(restaurant.coordinates.latitude, 41.8842528)
+        XCTAssertEqual(restaurant.coordinates.longitude, -87.6293151)
+        XCTAssertEqual(restaurant.categories, "American")
+        XCTAssertEqual(restaurant.address.display_address, ["145 N Dearborn St", "Chicago, IL 60602"])
+        XCTAssertEqual(restaurant.menu.menu_url, "https://www.thedearborntavern.com/menu/")
     }
-
 }
