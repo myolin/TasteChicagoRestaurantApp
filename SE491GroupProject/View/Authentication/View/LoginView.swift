@@ -10,10 +10,10 @@ struct LoginView: View {
         NavigationStack{
             VStack {
                 //logo
-                Image("depaul")
+                Image("logo")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 200, height: 200)
+                    .frame(width: 400, height: 200)
                     .padding(.vertical, 32)
                 
                 // form fields

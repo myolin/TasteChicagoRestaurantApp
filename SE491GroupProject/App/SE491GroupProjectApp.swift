@@ -15,20 +15,12 @@ struct SE491GroupProjectApp: App {
         WindowGroup {
             ZStack {
                 if showSplash {
-                    SplashScreenView()
-                        .transition(.opacity)
+                    SplashScreenView(showSplash: $showSplash)
                 } else {
                     ContentView().environmentObject(viewModel)
                 }
             }
             .environmentObject(globalSearch)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        self.showSplash = false
-                    }
-                }
-            }
         }
     }
 }
