@@ -107,7 +107,7 @@ class GlobalSearch: ObservableObject {
     func combine(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.allRestaurants += (self.american + self.chinese + self.korean + self.japanese + self.mexican + self.indian + self.thai + self.vietnamese)
-            print(self.allRestaurants.count)
+            print("Total Restaurants: \(self.allRestaurants.count)")
         }
     }
     

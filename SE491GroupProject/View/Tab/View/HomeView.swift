@@ -4,6 +4,7 @@ struct HomeView: View {
     @EnvironmentObject var globalSearch: GlobalSearch
     @StateObject var viewModel = HomeViewModel()
     @State private var searchTerm = ""
+    @State private var showYelpSearch = false
     
     var body: some View {
                 
@@ -26,14 +27,18 @@ struct HomeView: View {
             .navigationTitle(Text("Top Recommendation"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 2) {
-                        Text("Yelp")
-                            .font(.system(size: 17))
-                            .foregroundColor(.red)
-                        Image(systemName: "magnifyingglass.circle")
-                            .font(.system(size: 24))
-                            .foregroundColor(.red)
-                            .fontWeight(.semibold)
+                    Button {
+                        showYelpSearch.toggle()
+                    } label: {
+                        HStack(spacing: 2) {
+                            Text("Yelp")
+                                .font(.system(size: 17))
+                                .foregroundColor(.red)
+                            Image(systemName: "magnifyingglass.circle")
+                                .font(.system(size: 24))
+                                .foregroundColor(.red)
+                                .fontWeight(.semibold)
+                        }
                     }
                 }
             }
@@ -58,6 +63,9 @@ struct HomeView: View {
             .padding(.horizontal, -10)
             .onAppear {
                 viewModel.getTopRecommendation(globalSearch)
+            }
+            .sheet(isPresented: $showYelpSearch) {
+                YelpSearchView()
             }
         }
     }
