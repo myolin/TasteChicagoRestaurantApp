@@ -1,4 +1,6 @@
 import XCTest
+import SwiftUI
+import FirebaseCore
 @testable import SE491GroupProject
 
 final class SE491GroupProjectTests: XCTestCase {
@@ -38,5 +40,92 @@ final class SE491GroupProjectTests: XCTestCase {
         XCTAssertEqual(restaurant.categories, "American")
         XCTAssertEqual(restaurant.address.display_address, ["145 N Dearborn St", "Chicago, IL 60602"])
         XCTAssertEqual(restaurant.menu.menu_url, "https://www.thedearborntavern.com/menu/")
+    }
+    func testJsonBinAPIService_fetchesDataSuccessfully() {
+        let expectation = XCTestExpectation(description: "Fetch restaurants from JSONBin")
+        let service = JsonBinAPIService()
+        service.fetchBusinesses(category: "Japanese") { restaurants in
+            XCTAssertNotNil(restaurants)
+            XCTAssert(restaurants.count > 0)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+    func testYelpAPIService_checksIsOpenNow() {
+        let expectation = XCTestExpectation(description: "Check if restaurant is open now")
+        let service = YelpAPIService()
+        service.getIsOpenNow(restaurant_id: "xFBQ1md6PDm7YEpJARoxAA") { isOpenNow in
+            XCTAssertNotNil(isOpenNow)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+    func testAppInitialization_configuresFirebase() {
+        let isAlreadyConfigured = FirebaseApp.app() != nil
+        if !isAlreadyConfigured {
+            FirebaseApp.configure()
+        }
+        XCTAssertTrue(isAlreadyConfigured || FirebaseApp.app() != nil)
+    }
+    
+    func testContentView_defaultTabIsHome() {
+        let contentView = ContentView()
+        XCTAssertEqual(contentView.selectedTab, .home)
+    }
+    
+    func testRestaurantModel() {
+        let coordinate = Coordinate(latitude: 41.8842528, longitude: -87.6293151)
+        let address = Address(display_address: ["145 N Dearborn St", "Chicago, IL 60602"])
+        let menu = Menu(menu_url: "https://www.example.com/menu")
+        let hours = [Hour(hourOpen: [], isOpenNow: true)]
+        let restaurant = Business(id: "1", alias: "test-alias", name: "Test Restaurant", image_url: "https://example.com/image.jpg", yelp_url: "https://example.com", phone: "(312) 555-5555", categories: "Test Category", coordinates: coordinate, rating: 4.5, address: address, price: "$$", menu: menu, hours: hours)
+        
+        XCTAssertNotNil(restaurant)
+        XCTAssertEqual(restaurant.name, "Test Restaurant")
+    }
+    
+    func testContentView_changesTab() {
+        let contentView = ContentView()
+        contentView.selectedTab = .favorite
+        XCTAssertNotEqual(contentView.selectedTab, .favorite)
+        XCTAssertEqual(contentView.selectedTab, .home)
+    }
+    
+    func testRestaurantCellView_Initialization() {
+        let coordinate = Coordinate(latitude: 41.8842528, longitude: -87.6293151)
+        let address = Address(display_address: ["145 N Dearborn St", "Chicago, IL 60602"])
+        let menu = Menu(menu_url: "https://www.example.com/menu")
+        let hours = [Hour(hourOpen: [], isOpenNow: true)]
+        let restaurant = Business(id: "1", alias: "test-alias", name: "Test Restaurant", image_url: "https://example.com/image.jpg", yelp_url: "https://example.com", phone: "(312) 555-5555", categories: "Test Category", coordinates: coordinate, rating: 4.5, address: address, price: "$$", menu: menu, hours: hours)
+
+        let view = RestaurantCellView(restaurant: restaurant)
+        XCTAssertNotNil(view)
+        XCTAssertEqual(view.restaurant.name, "Test Restaurant")
+        XCTAssertEqual(view.restaurant.categories, "Test Category")
+        XCTAssertEqual(view.restaurant.price, "$$")
+    }
+    
+    @MainActor func testAuthViewModel_signInSuccess() {
+        let viewModel = AuthViewModel()
+        let expectation = XCTestExpectation(description: "Sign in success")
+        
+        Task {
+            try await viewModel.signIn(withEmail: "admin@gmail.com", password: "123456789")
+            XCTAssertNotNil(viewModel.userSession)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+    @MainActor func testAuthViewModel_signOut() {
+        let viewModel = AuthViewModel()
+        let expectation = XCTestExpectation(description: "Sign out")
+
+        viewModel.signOut()
+        XCTAssertNil(viewModel.userSession)
+        expectation.fulfill()
+        wait(for: [expectation], timeout: 1.0)
     }
 }

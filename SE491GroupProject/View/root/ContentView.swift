@@ -4,7 +4,7 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @EnvironmentObject var globalSearch: GlobalSearch
     
-    @State private var selectedTab: Tab = .home
+    @State internal var selectedTab: Tab = .home
     
     init() {
         UITabBar.appearance().isHidden = true
