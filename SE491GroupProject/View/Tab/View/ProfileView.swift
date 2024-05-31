@@ -3,6 +3,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @State private var showingChangePasswordView = false
+    @State private var showingRequestPage = false
 
     var body: some View {
         List {
@@ -21,6 +22,28 @@ struct ProfileView: View {
                     Text(viewModel.currentUser?.email ?? "No Email")
                         .foregroundColor(.secondary)
                         .lineLimit(1)
+                }
+            }
+            
+            Section("General") {
+                //version info
+                HStack {
+                    ProfileRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+                    
+                    Spacer()
+                    
+                    Text("1.0.0")
+                        .font(.subheadline)
+                        .foregroundColor(Color(.systemGray))
+                }
+                
+                Button(action: {
+                    showingRequestPage.toggle()
+                }) {
+                    ProfileRowView(imageName: "pencil.circle.fill", title: "Request a restaurant", tintColor: Color.purple)
+                }
+                .sheet(isPresented: $showingRequestPage) {
+                    RequestRestaurantView()
                 }
             }
             
@@ -47,6 +70,48 @@ struct ProfileView: View {
                 }
             }
         }
+    }
+}
+
+struct RequestRestaurantView: View {
+    @Environment(\.dismiss) var dismiss
+    @State private var restaurantName = ""
+    @State private var restaurantAddress = ""
+    private var service = FirestoreService()
+    
+    var body: some View {
+        VStack(spacing: 40) {
+            Text("Request a restaurant")
+                .font(Font.custom("Futura", size: 25))
+                .padding(.top, 25)
+            VStack(spacing: 16) {
+                InputView(text: $restaurantName,
+                          title: "Restaurant Name",
+                          placeholder: "")
+                InputView(text: $restaurantAddress,
+                          title: "Restaurant Address",
+                          placeholder: "")
+                Button {
+                    service.makeRequest(name: restaurantName, address: restaurantAddress)
+                    dismiss()
+                } label: {
+                    HStack {
+                        Text("REQUEST")
+                            .fontWeight(.semibold)
+                        Image(systemName: "arrow.right")
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 40)
+                }
+                .background(Color(.purple))
+                .cornerRadius(10)
+                .padding(.top, 24)
+            }
+            Spacer()
+        }
+        .padding()
+        .presentationDetents([.medium])
+        .presentationDragIndicator(.visible)
     }
 }
 

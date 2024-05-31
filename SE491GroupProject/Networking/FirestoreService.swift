@@ -53,4 +53,17 @@ class FirestoreService {
             }
         }
     }
+    
+    // Let user make a restaurant request
+    func makeRequest(name: String, address: String) {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = dateFormatter.string(from: currentDate)
+        
+        db.collection("Restaurant Requests").document(formattedDate).setData([
+            "Restaurant Name": name,
+            "Restaurant Address": address
+        ])
+    }
 }
