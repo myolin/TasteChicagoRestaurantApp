@@ -51,6 +51,7 @@
 		CBB932582BFDA80400333FA9 /* YelpSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932572BFDA80400333FA9 /* YelpSearchView.swift */; };
 		CBB9325A2BFDA85000333FA9 /* YelpSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */; };
 		CBB9325C2BFDA88300333FA9 /* YelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9325B2BFDA88300333FA9 /* YelpModel.swift */; };
+		CBB932782C0966C200333FA9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932772C0966C200333FA9 /* ExploreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		CBB932572BFDA80400333FA9 /* YelpSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpSearchView.swift; sourceTree = "<group>"; };
 		CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpSearchViewModel.swift; sourceTree = "<group>"; };
 		CBB9325B2BFDA88300333FA9 /* YelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpModel.swift; sourceTree = "<group>"; };
+		CBB932772C0966C200333FA9 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				CB573D3D2BD0D7DE003613CD /* ReservationView.swift */,
 				CB573D1C2BD07617003613CD /* ProfileView.swift */,
 				CBB932572BFDA80400333FA9 /* YelpSearchView.swift */,
+				CBB932772C0966C200333FA9 /* ExploreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				CB94736A2BEC15D6004A9598 /* MapView.swift in Sources */,
 				CB9473722BEC16AC004A9598 /* FavoriteViewModel.swift in Sources */,
 				CB573D382BD0D61B003613CD /* FavoriteView.swift in Sources */,
+				CBB932782C0966C200333FA9 /* ExploreView.swift in Sources */,
 				CB9473762BEC1713004A9598 /* JsonBinAPIService.swift in Sources */,
 				CBB932582BFDA80400333FA9 /* YelpSearchView.swift in Sources */,
 				CB573D1F2BD0778E003613CD /* ProfileRowView.swift in Sources */,

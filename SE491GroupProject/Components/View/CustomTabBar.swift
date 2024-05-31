@@ -5,7 +5,7 @@ enum Tab: String, CaseIterable {
     case category = "tablecells"
     case favorite = "heart.circle"
     case reservation = "calendar.circle"
-    case profile = "person.circle"
+    case explore
 }
 
 struct CustomTabBar: View {
@@ -17,24 +17,82 @@ struct CustomTabBar: View {
     var body: some View {
         VStack {
             HStack {
-                ForEach(Tab.allCases, id: \.rawValue) { tab in
-                    Spacer()
-                    Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
-                        .scaleEffect(tab == selectedTab ? 1.5 : 1.0)
-                        .foregroundColor(selectedTab == tab ? .brown : .gray)
-                        .font(.system(size: 22))
-                        .onTapGesture {
-                            withAnimation(.easeIn(duration: 0.1)) {
-                                selectedTab = tab
-                            }
+                Spacer()
+                Image(systemName: selectedTab == Tab.home ? fillImage : Tab.home.rawValue)
+                    .scaleEffect(Tab.home == selectedTab ? 1.5 : 1.0)
+                    .foregroundColor(selectedTab == Tab.home ? .brown : .gray)
+                    .font(.system(size: 22))
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            selectedTab = Tab.home
                         }
-                        .offset(y: -10)
-                    Spacer()
-                }
+                    }
+                    .offset(y: -10)
+                Spacer()
+                Image(systemName: selectedTab == Tab.category ? fillImage : Tab.category.rawValue)
+                    .scaleEffect(Tab.category == selectedTab ? 1.5 : 1.0)
+                    .foregroundColor(selectedTab == Tab.category ? .brown : .gray)
+                    .font(.system(size: 22))
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            selectedTab = Tab.category
+                        }
+                    }
+                    .offset(y: -10)
+                Spacer()
+                Circle()
+                    .fill(.gray)
+                    .foregroundStyle(.white)
+                    .frame(width: 80, height: 80)
+                    .offset(y: -22)
+                Spacer()
+                Image(systemName: selectedTab == Tab.favorite ? fillImage : Tab.favorite.rawValue)
+                    .scaleEffect(Tab.favorite == selectedTab ? 1.5 : 1.0)
+                    .foregroundColor(selectedTab == Tab.favorite ? .brown : .gray)
+                    .font(.system(size: 22))
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            selectedTab = Tab.favorite
+                        }
+                    }
+                    .offset(y: -10)
+                Spacer()
+                Image(systemName: selectedTab == Tab.reservation ? fillImage : Tab.reservation.rawValue)
+                    .scaleEffect(Tab.reservation == selectedTab ? 1.5 : 1.0)
+                    .foregroundColor(selectedTab == Tab.reservation ? .brown : .gray)
+                    .font(.system(size: 22))
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            selectedTab = Tab.reservation
+                        }
+                    }
+                    .offset(y: -10)
+                Spacer()
+                
             }
             .frame(width: nil, height: 70)
             .background(.thinMaterial)
             .cornerRadius(10)
+            .overlay {
+                ZStack {
+                    Circle()
+                        .fill(Tab.explore == selectedTab ? .brown : .white)
+                        .foregroundStyle(.white)
+                        .frame(width: 80, height: 80)
+                        .shadow(radius: 4)
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
+                        .scaleEffect(Tab.explore == selectedTab ? 1.5: 1.0)
+                        .onTapGesture {
+                            withAnimation(.easeIn(duration: 0.1)) {
+                                selectedTab = Tab.explore
+                            }
+                        }
+                }
+                .offset(x: 5, y: -22)
+            }
         }
     }
 }

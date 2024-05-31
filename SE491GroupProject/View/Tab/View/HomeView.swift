@@ -26,6 +26,16 @@ struct HomeView: View {
             .listStyle(.plain)
             .navigationTitle(Text("Top Recommendation"))
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        Image(systemName: "person.circle")
+                            .scaleEffect(1.2)
+                            .foregroundColor(.brown)
+                            .font(.system(size: 20))
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showYelpSearch.toggle()
@@ -72,5 +82,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView().environmentObject(GlobalSearch())
+    HomeView()
+        .environmentObject(GlobalSearch())
+        .environmentObject(AuthViewModel())
 }

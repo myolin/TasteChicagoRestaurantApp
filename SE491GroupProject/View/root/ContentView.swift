@@ -23,8 +23,8 @@ struct ContentView: View {
                         FavoriteView()
                     case .reservation:
                         ReservationView()
-                    case .profile:
-                        ProfileView()
+                    case .explore:
+                        ExploreView()
                     }
                 }
                 .overlay(
@@ -45,4 +45,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(AuthViewModel())
 }
