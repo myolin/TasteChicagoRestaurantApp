@@ -54,6 +54,8 @@
 		CBB932782C0966C200333FA9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932772C0966C200333FA9 /* ExploreView.swift */; };
 		CBB932822C10203300333FA9 /* NeighborhoodGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */; };
 		CBB932842C10204000333FA9 /* NeighborhoodGuidesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */; };
+		CBB932862C11032700333FA9 /* CalendarSpecificView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932852C11032700333FA9 /* CalendarSpecificView.swift */; };
+		CBB932882C11035C00333FA9 /* CalendarSpecificViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932872C11035C00333FA9 /* CalendarSpecificViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		CBB932772C0966C200333FA9 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborhoodGuidesView.swift; sourceTree = "<group>"; };
 		CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborhoodGuidesViewModel.swift; sourceTree = "<group>"; };
+		CBB932852C11032700333FA9 /* CalendarSpecificView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSpecificView.swift; sourceTree = "<group>"; };
+		CBB932872C11035C00333FA9 /* CalendarSpecificViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSpecificViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				CBB932572BFDA80400333FA9 /* YelpSearchView.swift */,
 				CBB932772C0966C200333FA9 /* ExploreView.swift */,
 				CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */,
+				CBB932852C11032700333FA9 /* CalendarSpecificView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */,
 				CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */,
 				CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */,
+				CBB932872C11035C00333FA9 /* CalendarSpecificViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,6 +535,8 @@
 				CB94736C2BEC15F8004A9598 /* ListViewModel.swift in Sources */,
 				CB573D3E2BD0D7DF003613CD /* ReservationView.swift in Sources */,
 				CB573D362BD0D5F6003613CD /* HomeView.swift in Sources */,
+				CBB932862C11032700333FA9 /* CalendarSpecificView.swift in Sources */,
+				CBB932882C11035C00333FA9 /* CalendarSpecificViewModel.swift in Sources */,
 				CBB9325C2BFDA88300333FA9 /* YelpModel.swift in Sources */,
 				CB94736E2BEC1603004A9598 /* RestaurantDetailViewModel.swift in Sources */,
 				CB573D3C2BD0D7D1003613CD /* CategoryView.swift in Sources */,

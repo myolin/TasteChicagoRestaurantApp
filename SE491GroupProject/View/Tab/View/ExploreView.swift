@@ -31,7 +31,7 @@ struct ExploreView: View {
                 .padding()
                 VStack {
                     NavigationLink {
-                        
+                        CalendarSpecificView()
                     } label: {
                         HStack(alignment: .center) {
                             Image("calendar_specific")
