@@ -54,6 +54,12 @@ class JsonBinAPIService {
             return "\(baseURL)663ac494e41b4d34e4f05626"
         case "Vietnamese":
             return "\(baseURL)663ac4b8e41b4d34e4f05635"
+        case "Valentines":
+            return "\(baseURL)665e424bacd3cb34a8524590"
+        case "South Loop":
+            return "\(baseURL)665e3cc4ad19ca34f873cd95"
+        case "Logan Square":
+            return "\(baseURL)665e3507ad19ca34f873cb4f"
         default:
             return ""
         }

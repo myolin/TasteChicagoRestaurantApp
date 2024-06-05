@@ -52,6 +52,8 @@
 		CBB9325A2BFDA85000333FA9 /* YelpSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */; };
 		CBB9325C2BFDA88300333FA9 /* YelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9325B2BFDA88300333FA9 /* YelpModel.swift */; };
 		CBB932782C0966C200333FA9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932772C0966C200333FA9 /* ExploreView.swift */; };
+		CBB932822C10203300333FA9 /* NeighborhoodGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */; };
+		CBB932842C10204000333FA9 /* NeighborhoodGuidesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpSearchViewModel.swift; sourceTree = "<group>"; };
 		CBB9325B2BFDA88300333FA9 /* YelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpModel.swift; sourceTree = "<group>"; };
 		CBB932772C0966C200333FA9 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborhoodGuidesView.swift; sourceTree = "<group>"; };
+		CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborhoodGuidesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				CB573D1C2BD07617003613CD /* ProfileView.swift */,
 				CBB932572BFDA80400333FA9 /* YelpSearchView.swift */,
 				CBB932772C0966C200333FA9 /* ExploreView.swift */,
+				CBB932812C10203300333FA9 /* NeighborhoodGuidesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				CB9473712BEC16AC004A9598 /* FavoriteViewModel.swift */,
 				CB0400F42BEFF23900D10E90 /* GlobalSearch.swift */,
 				CBB932592BFDA85000333FA9 /* YelpSearchViewModel.swift */,
+				CBB932832C10204000333FA9 /* NeighborhoodGuidesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,9 +517,11 @@
 				CB573D1A2BD074C8003613CD /* User.swift in Sources */,
 				CB94736A2BEC15D6004A9598 /* MapView.swift in Sources */,
 				CB9473722BEC16AC004A9598 /* FavoriteViewModel.swift in Sources */,
+				CBB932842C10204000333FA9 /* NeighborhoodGuidesViewModel.swift in Sources */,
 				CB573D382BD0D61B003613CD /* FavoriteView.swift in Sources */,
 				CBB932782C0966C200333FA9 /* ExploreView.swift in Sources */,
 				CB9473762BEC1713004A9598 /* JsonBinAPIService.swift in Sources */,
+				CBB932822C10203300333FA9 /* NeighborhoodGuidesView.swift in Sources */,
 				CBB932582BFDA80400333FA9 /* YelpSearchView.swift in Sources */,
 				CB573D1F2BD0778E003613CD /* ProfileRowView.swift in Sources */,
 				CB9473742BEC16EA004A9598 /* MapLocation.swift in Sources */,

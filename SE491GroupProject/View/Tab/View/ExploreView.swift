@@ -10,20 +10,18 @@ struct ExploreView: View {
                     .padding(.bottom, 40)
                 VStack {
                     NavigationLink {
-                        
+                        NeighborhoodGuidesView()
                     } label: {
                         HStack(alignment: .center) {
-                            Image("logo")
+                            Image("neighborhood_guides")
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 200, height: 50)
-                                .offset(x: -20)
+                                .frame(width: 150, height: 40)
                             Text("Neighborhood Guides")
                                 .foregroundStyle(.white)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
                                 .frame(maxHeight: 100)
-                                .offset(x: -20)
                             Spacer()
                         }
                     }
@@ -36,17 +34,17 @@ struct ExploreView: View {
                         
                     } label: {
                         HStack(alignment: .center) {
-                            Image("logo")
+                            Image("calendar_specific")
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 200, height: 50)
-                                .offset(x: -20)
+                                .frame(width: 110, height: 40)
+                                .offset(x: 20)
                             Text("Calendar Specific Restaurants")
                                 .foregroundStyle(.white)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
                                 .frame(maxHeight: 100)
-                                .offset(x: -20)
+                                .offset(x: 30)
                             Spacer()
                         }
                     }
