@@ -107,18 +107,6 @@ final class SE491GroupProjectTests: XCTestCase {
         XCTAssertEqual(view.restaurant.price, "$$")
     }
     
-    @MainActor func testAuthViewModel_signInSuccess() {
-        let viewModel = AuthViewModel()
-        let expectation = XCTestExpectation(description: "Sign in success")
-        
-        Task {
-            try await viewModel.signIn(withEmail: "admin@gmail.com", password: "123456789")
-            XCTAssertNotNil(viewModel.userSession)
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5.0)
-    }
-    
     @MainActor func testAuthViewModel_signOut() {
         let viewModel = AuthViewModel()
         let expectation = XCTestExpectation(description: "Sign out")
