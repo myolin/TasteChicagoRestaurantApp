@@ -1,4 +1,5 @@
 import Foundation
+import TelemetryDeck
 
 class JsonBinAPIService {
     
@@ -21,6 +22,11 @@ class JsonBinAPIService {
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                TelemetryDeck.signal("JsonBinAPIError", parameters: ["error": error.localizedDescription])
+                return
+            }
+            TelemetryDeck.signal("JsonBinAPICall", parameters: ["category": category])
             guard let jsonData = data else { return }
             let decoder = JSONDecoder()
             

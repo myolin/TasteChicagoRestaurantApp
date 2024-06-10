@@ -1,4 +1,5 @@
 import SwiftUI
+import TelemetryDeck
 
 struct HomeView: View {
     @EnvironmentObject var globalSearch: GlobalSearch
@@ -39,6 +40,8 @@ struct HomeView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showYelpSearch.toggle()
+                        TelemetryDeck.signal("YelpSearch")
+                        TelemetryDeck.signal("FeatureUsed", parameters: ["featureName": "Yelp Search"])
                     } label: {
                         HStack(spacing: 2) {
                             Text("Yelp")

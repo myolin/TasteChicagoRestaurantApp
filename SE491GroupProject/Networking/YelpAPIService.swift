@@ -1,4 +1,5 @@
 import Foundation
+import TelemetryDeck
 
 class YelpAPIService {
     
@@ -18,6 +19,11 @@ class YelpAPIService {
         request.httpMethod = "GET"
         request.addValue("Bearer \(yelpAPIKey)", forHTTPHeaderField: "Authorization")
         URLSession.shared.dataTask(with: request) { (data,response,error) in
+            if let error = error {
+                TelemetryDeck.signal("YelpAPIError", parameters: ["error": error.localizedDescription])
+                return
+            }
+            TelemetryDeck.signal("YelpAPICall", parameters: ["restaurantID": restaurant_id])
             guard let jsonData = data else { return }
             let decoder = JSONDecoder()
             do {

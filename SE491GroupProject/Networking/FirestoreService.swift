@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import TelemetryDeck
 
 class FirestoreService {
     
@@ -19,6 +20,7 @@ class FirestoreService {
             do {
                 try favCollection.document("\(restaurant.name)").setData(from: restaurant)
             } catch let error {
+                TelemetryDeck.signal("FirestoreError", parameters: ["error": error.localizedDescription])
                 print("Error writing to favorite: \(error)" )
             }
         }
@@ -60,6 +62,10 @@ class FirestoreService {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let formattedDate = dateFormatter.string(from: currentDate)
+        
+        TelemetryDeck.signal("NewRestaurantRequest", parameters: ["RestaurantName": name.lowercased()])
+        
+        TelemetryDeck.signal("FeatureUsed", parameters: ["featureName": "Restaurant Request"])
         
         db.collection("Restaurant Requests").document(formattedDate).setData([
             "Restaurant Name": name,

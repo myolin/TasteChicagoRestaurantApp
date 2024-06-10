@@ -1,4 +1,5 @@
 import SwiftUI
+import TelemetryDeck
 import WebKit
 
 struct RestaurantDetailView: View {
@@ -88,6 +89,9 @@ struct RestaurantDetailView: View {
                             VStack(alignment: .trailing, spacing: 25) {
                                 Button {
                                     showMenuWebView.toggle()
+                                    TelemetryDeck.signal("RestaurantWebsiteVisited")
+                                    
+                                    TelemetryDeck.signal("FeatureUsed", parameters: ["featureName": "Visit Restaurant Website"])
                                 } label: {
                                     HStack {
                                         Text("Menu")
@@ -107,6 +111,7 @@ struct RestaurantDetailView: View {
                                 
                                 Button {
                                     showYelpWebView.toggle()
+                                    TelemetryDeck.signal("YelpPageVisited", parameters: ["RestaurantID": restaurant.id])
                                 } label: {
                                     Image("yelp")
                                         .resizable()
@@ -119,6 +124,9 @@ struct RestaurantDetailView: View {
                                 
                                 Button {
                                     viewModel.addToFav(restaurant)
+                                    TelemetryDeck.signal("AddedToFavorites", parameters: ["RestaurantID": restaurant.id])
+                                    
+                                    TelemetryDeck.signal("FeatureUsed", parameters: ["featureName": "Favorite Restaurant"])
                                 } label: {
                                     Image(systemName: "heart.fill")
                                         .resizable()
@@ -193,6 +201,7 @@ struct RestaurantDetailView: View {
         .ignoresSafeArea(edges: .top)
         .onAppear {
             viewModel.getIsOpenNow(restaurant.id)
+            TelemetryDeck.signal("RestaurantDetailViewOpened", parameters: ["RestaurantID": restaurant.id])
         }
     }
 }

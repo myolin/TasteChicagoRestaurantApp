@@ -1,4 +1,5 @@
 import SwiftUI
+import TelemetryDeck
 
 enum Tab: String, CaseIterable {
     case home = "house"
@@ -25,6 +26,8 @@ struct CustomTabBar: View {
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.1)) {
                             selectedTab = Tab.home
+                            TelemetryDeck.signal("ScreenVisited", parameters: ["screenName": "Home"])
+
                         }
                     }
                     .offset(y: -10)
@@ -36,6 +39,7 @@ struct CustomTabBar: View {
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.1)) {
                             selectedTab = Tab.category
+                            TelemetryDeck.signal("ScreenVisited", parameters: ["screenName": "Cuisine"])
                         }
                     }
                     .offset(y: -10)
@@ -53,6 +57,7 @@ struct CustomTabBar: View {
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.1)) {
                             selectedTab = Tab.favorite
+                            TelemetryDeck.signal("ScreenVisited", parameters: ["screenName": "Favorite Restaurants"])
                         }
                     }
                     .offset(y: -10)
@@ -64,6 +69,7 @@ struct CustomTabBar: View {
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.1)) {
                             selectedTab = Tab.reservation
+                            TelemetryDeck.signal("ScreenVisited", parameters: ["screenName": "Reservation"])
                         }
                     }
                     .offset(y: -10)
@@ -88,6 +94,8 @@ struct CustomTabBar: View {
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.1)) {
                                 selectedTab = Tab.explore
+                                TelemetryDeck.signal("FeatureUsed", parameters: ["featureName": "Explore Chicago"])
+                                TelemetryDeck.signal("ScreenVisited", parameters: ["screenName": "Explore Chicago"])
                             }
                         }
                 }

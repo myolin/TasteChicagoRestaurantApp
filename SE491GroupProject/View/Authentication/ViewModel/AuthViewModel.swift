@@ -1,4 +1,5 @@
 import Foundation
+import TelemetryDeck
 import Firebase
 import FirebaseFirestoreSwift
 
@@ -24,7 +25,11 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
             await fetchUser()
+            // Signal if Sign In is Successful
+            TelemetryDeck.signal("SignInSuccess")
         } catch {
+            // Signal if Sign In is NOT Successful
+            TelemetryDeck.signal("SignInFailure")
             print("DEBUG: Failed to sign in user with error \(error.localizedDescription)")
         }
     }
@@ -38,7 +43,12 @@ class AuthViewModel: ObservableObject {
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
+            
+            // Signal for new account creations
+            TelemetryDeck.signal("AccountCreated")
         } catch {
+            // Signal for when new accounts are not created succesfully
+            TelemetryDeck.signal("AccountCreationFailed")
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
         }
     }
@@ -49,6 +59,9 @@ class AuthViewModel: ObservableObject {
             try Auth.auth().signOut()
             self.userSession = nil
             self.currentUser = nil
+            
+            // Signal to track SignOuts
+            TelemetryDeck.signal("SignOut")
         } catch {
             print("DEBUG: Failed to sing out with error \(error.localizedDescription)")
         }
@@ -59,6 +72,9 @@ class AuthViewModel: ObservableObject {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 print("DEBUG: Failed to send a password reset email with error \(error.localizedDescription)")
+            } else {
+                // Signal to track Password Reset Requests
+                TelemetryDeck.signal("PasswordResetRequested")
             }
         }
     }
@@ -72,6 +88,9 @@ class AuthViewModel: ObservableObject {
             } else {
                 self.userSession = nil
                 self.currentUser = nil
+                
+                // Signal to track Account Deletions
+                TelemetryDeck.signal("AccountDeleted")
             }
         }
     }
