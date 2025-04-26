@@ -36,6 +36,10 @@ TasteChicago is an iOS app written in Swift which is designed to allow users to 
 - **JsonBin API**: Manages the retrieval of categorized restaurant data.
 - **TelemetryDeck**: Monitors app usage and user interaction for analytics purposes.
 
+## Issues
+
+- **Open Table API**: Reservation Feature not working as of this moment.
+
 ## Screenshots
 ![HomePage](https://github.com/SE491/SE491GroupProject/assets/35351464/97a4d280-5096-4521-a861-c71011ce95d8)
 ![Detailed Restaurant View](https://github.com/SE491/SE491GroupProject/assets/35351464/c7b16577-6d20-434d-85e2-261648b95e76)
