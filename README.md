@@ -2,14 +2,12 @@
 
 TasteChicago is an iOS app written in Swift which is designed to allow users to explore, and make reservations at a variety of restaurants in Chicago. From detailed restaurant information to easy reservation options, TasteChicago delivers a complete packgae for all food lovers.
 
-This app was developed as part of the course SE491: Software Engineering Studio at DePaul University. 
-
 ## Developed By:
 
+- **Myo Lin**
 - **Joseph Pokorny**
 - **Tauseef Mohiuddin Mohammed**
 - **Dhanalakshmi Sangaraju**
-- **Myo Lin**
 
 ## Features
 
